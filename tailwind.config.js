@@ -4,6 +4,9 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
+  darkMode: 'class', // or 'class' depending on how you want to enable it
+
   theme: {
     fontSize: {
       xs: ['12px', '16px'],
@@ -42,3 +45,5 @@ export default {
   },
   plugins: [],
 }
+
+

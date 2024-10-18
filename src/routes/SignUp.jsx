@@ -10,12 +10,7 @@ function SignUp() {
   };
 
   return (
-    <AuthPageContainer
-      error={errorMessage}
-      path="/login"
-      text="Sign in to your account"
-      title="Sign up"
-    >
+    <AuthPageContainer>
       <SignUpForm onError={handleError} />
     </AuthPageContainer>
   );
