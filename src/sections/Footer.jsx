@@ -4,7 +4,8 @@ import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className='max-container'>
+   
+    <footer className='bg-black padding-x padding-t pb-8 max-container min-w-full'>
       <div className='flex justify-between items-start gap-20 flex-wrap max-lg:flex-col'>
         <div className='flex flex-col items-start'>
           <a href='/'>
@@ -67,6 +68,7 @@ const Footer = () => {
         <p className='font-montserrat cursor-pointer'>Terms & Conditions</p>
       </div>
     </footer>
+
   );
 };
 
