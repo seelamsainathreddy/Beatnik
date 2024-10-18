@@ -10,12 +10,7 @@ function Login() {
   };
 
   return (
-    <AuthPageContainer
-      error={errorMessage}
-      path="/register"
-      text="Need an account?"
-      title="Sign in"
-    >
+    <AuthPageContainer>
       <LoginForm onError={handleError} />
     </AuthPageContainer>
   );
