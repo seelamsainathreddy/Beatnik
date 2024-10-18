@@ -13,13 +13,18 @@ import {
 
 const App = () => {
   return (
-    <main className='relative'>
+    <>
+    <header>
       <Nav />
+    </header>
+
+    <main>
       <Outlet />
-      <section className=' bg-black padding-x padding-t pb-8'>
-        <Footer />
-      </section>
-    </main>
+     </main>
+
+    <Footer />
+   
+    </>
   );
 };
 

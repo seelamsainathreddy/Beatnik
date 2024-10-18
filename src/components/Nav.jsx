@@ -2,7 +2,7 @@ import { hamburger } from "../assets/icons";
 import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
 import { useAuth } from "../context/AuthContext";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,7 +10,7 @@ const Nav = () => {
   const { isAuth } = useAuth();
 
   return (
-    <header className='padding-x py-8 absolute z-10 w-full'>
+    <header className='padding-x py-8  z-10 w-full'>
       <nav className='flex justify-between items-center max-container'>
         <a href='/'>
           <img
@@ -36,12 +36,13 @@ const Nav = () => {
         <div className='flex gap-2 text-lg leading-normal font-medium font-montserrat max-lg:hidden wide:mr-24'>
         {!isAuth && (
             <>
-            <NavLink to="/login" className='flex items-center gap-2' activeClassName='active'>
-              <i className="ion-log-in"></i> Login
-            </NavLink>
-            <NavLink to="/register" className='flex items-center gap-2' activeClassName='active'>
-              Sign up
-            </NavLink>
+            <Link to="/login" className='flex items-center gap-2'>
+             Login
+            </Link>
+            <span>/</span>
+            <Link to="/register" className='flex items-center gap-2'>
+              SignUp
+            </Link>
           </>
           )}
         </div>
