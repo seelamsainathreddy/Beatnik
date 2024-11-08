@@ -1,14 +1,13 @@
 import { hamburger } from "../assets/icons";
 import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
-import { useAuth } from "../context/AuthContext";
 import { Link } from 'react-router-dom';
-
-
+import { useState } from "react";
+import Login from "../routes/Login";
 
 const Nav = () => {
-  const { isAuth } = useAuth();
-
+  const [token, setToken] = useState(null);
+  const isAuth = token !== null;
   return (
     <header className='padding-x py-8  z-10 w-full'>
       <nav className='flex justify-between items-center max-container'>
@@ -16,7 +15,6 @@ const Nav = () => {
           <img
             src={headerLogo}
             alt='logo'
-       
             className='m-0 w-[85px] h-[85px]'
           />
         </a>
@@ -36,11 +34,11 @@ const Nav = () => {
         <div className='flex gap-2 text-lg leading-normal font-medium font-montserrat max-lg:hidden wide:mr-24'>
         {!isAuth && (
             <>
-            <Link to="/login" className='flex items-center gap-2'>
+            <Link to="login" className='flex items-center gap-2'>
              Login
             </Link>
             <span>/</span>
-            <Link to="/register" className='flex items-center gap-2'>
+            <Link to="signup" className='flex items-center gap-2'>
               SignUp
             </Link>
           </>
