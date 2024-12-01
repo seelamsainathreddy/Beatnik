@@ -7,14 +7,21 @@ import { Link } from 'react-router-dom';
 
 
 async function loginUser(credentials) {
-  return fetch('http://localhost:8000/login', {
+  // First, get the CSRF token
+
+
+
+  // Then make the login request
+  const response = await fetch('http://localhost:8000/login', {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
+  });
+  
+  return response.json();
 }
 
 
